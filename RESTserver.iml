@@ -21,5 +21,8 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="Jetty 8.1.17" level="application_server_libraries" />
     <orderEntry type="library" name="jax-rs-jersey-1.12" level="application" />
+    <orderEntry type="library" name="javax.servlet:servlet-api:2.4" level="project" />
+    <orderEntry type="library" name="org.eclipse.jetty:test-jetty-servlet:8.0.1.v20110908" level="project" />
+    <orderEntry type="library" name="javax.xml.bind:jaxb-api-osgi:2.2.4" level="project" />
   </component>
 </module>
