@@ -1,7 +1,7 @@
 package rest;
 
 /**
- * Created by Дамир on 06.11.2015.
+ * Created by ����� on 06.11.2015.
  */
 
 import javax.ws.rs.*;
@@ -18,8 +18,41 @@ import java.net.URLEncoder;
 import java.io.*;
 
 @Stateless
-@Path("/participant")
+@Path("/part")
 public class ParticipantSvc {
+
+    /*public String sayHtmlHello() {
+        return "<html><head>\n" +
+                "    <meta http-equiv=\"CONTENT-TYPE\" content=\"text/html; charset=UTF-8\">\n" +
+                "    <title>MEETING APP</title>\n" +
+                "</head>\n" + "<body><form action=\"setParticipant\" method=\"POST\"><h1 >Главная страница</h1>\n" +
+                "  <table class=\"insert\">\n" +
+                "    <tbody>\n" +
+                "    <tr>\n" +
+                "      <td class=\"insert\">Фамилия</td>\n" +
+                "      <td><input type=\"text\" id=\"surname\" required placeholder=\"Введите фамилию\" name=\"surname\" size=\"50\"/></td>\n" +
+                "    </tr>\n" +
+                "    <tr>\n" +
+                "      <td class=\"insert\">Имя</td>\n" +
+                "      <td><input type=\"text\" id=\"firstname\" required placeholder=\"Введите Имя\" name=\"firstname\" size=\"50\"/></td>\n" +
+                "    </tr>\n" +
+                "    <tr>\n" +
+                "      <td class=\"insert\">Отчество</td>\n" +
+                "      <td><input type=\"text\" id=\"date\" required placeholder=\"Введите отчество\"  name=\"patronymic\" size=\"50\"/></td>\n" +
+                "    </tr>\n" +
+                "    <tr>\n" +
+                "      <td class=\"insert\">Должность</td>\n" +
+                "      <td><input type=\"text\" id=\"country\" required placeholder=\"Введите должность\" name=\"post\" size=\"50\"/></td>\n" +
+                "    </tr>\n" +
+                "    </tbody>\n" +
+                "  </table>\n" +
+                "\n" +
+                "<input class=\"button\" type=\"reset\" value=\"Очистить\" name=\"clear\"/>\n" +
+                "&nbsp;&nbsp;\n" +
+                "<input class=\"button\" type=\"submit\" value=\"Сохранить\" name=\"submit\"/>\n" +
+                "&nbsp;&nbsp;</form></body></html>";
+    }*/
+
 
     @POST
     @Path("/setParticipant")
