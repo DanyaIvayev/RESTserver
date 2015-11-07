@@ -11,6 +11,6 @@
     <title>REST SERVER MEETING APP</title>
   </head>
   <body>
-
+    <h1>Index JSP Page WOOT! JSPs work!</h1>
   </body>
 </html>
