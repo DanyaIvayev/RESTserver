@@ -1,4 +1,5 @@
 package dto;
+
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
@@ -8,12 +9,14 @@ import java.util.List;
 @XmlRootElement
 public class Meeting {
     public enum Priority {URGENT, ROUTINE, POSSIBLE}
+
     private String name;
     private String description;
     private String beginData;
     private String endData;
     private List<Participant> participants;
     Priority priority = Priority.URGENT;
+
     public String getName() {
         return name;
     }
@@ -65,16 +68,19 @@ public class Meeting {
 
     @Override
     public String toString() {
-        StringBuffer result = new StringBuffer("{" +"\"name\":");
-        result.append("\""+name + "\"").append(", \"description\":'").append("\""+ description + "\"")
-                .append(", \"beginData\":" +"\""+ beginData + "\""+
-                ", \"endData\":" + "\""+ endData + "\""+
-                ", \"participants\":" +"[");
+        StringBuffer result = new StringBuffer("{" + "\"name\":");
+        result.append("\"" + name + "\"").append(", \"description\":'").append("\"" + description + "\"")
+                .append(", \"beginData\":" + "\"" + beginData + "\"" +
+                        ", \"endData\":" + "\"" + endData + "\"");
+        if (participants != null) {
+            result.append(", \"participants\":" + "[");
 
-        for(Participant p : participants){
-            result.append(participants.toString()+", ");
+            for (Participant p : participants) {
+                result.append(participants.toString() + ", ");
+            }
+            result.append("]");
         }
-        result.append("], "+priority.toString()+"}");
+        result.append(", " + priority.toString() + "}");
         return result.toString();
     }
 }
