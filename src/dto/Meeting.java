@@ -1,6 +1,7 @@
 package dto;
 
 import javax.xml.bind.annotation.XmlRootElement;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,7 +15,7 @@ public class Meeting {
     private String description;
     private String beginData;
     private String endData;
-    private List<Participant> participants;
+    private ArrayList<Participant> participants;
     Priority priority = Priority.URGENT;
 
     public String getName() {
@@ -41,13 +42,21 @@ public class Meeting {
         this.beginData = beginData;
     }
 
-    public List<Participant> getParticipants() {
+    public ArrayList<Participant> getParticipants() {
         return participants;
     }
 
-    public void setParticipants(List<Participant> participants) {
+    public void setParticipants(ArrayList<Participant> participants) {
         this.participants = participants;
     }
+
+    public void addParticipant(Participant participant){
+        if(participants==null){
+            participants = new ArrayList<Participant>();
+        }
+        participants.add(participant);
+    }
+
 
     public String getEndData() {
 
@@ -69,18 +78,18 @@ public class Meeting {
     @Override
     public String toString() {
         StringBuffer result = new StringBuffer("{" + "\"name\":");
-        result.append("\"" + name + "\"").append(", \"description\":'").append("\"" + description + "\"")
+        result.append("\"" + name + "\"").append(", \"description\":").append("\"" + description + "\"")
                 .append(", \"beginData\":" + "\"" + beginData + "\"" +
                         ", \"endData\":" + "\"" + endData + "\"");
         if (participants != null) {
-            result.append(", \"participants\":" + "[");
+            result.append(", \"participants\":" );
 
             for (Participant p : participants) {
                 result.append(participants.toString() + ", ");
             }
-            result.append("]");
+
         }
-        result.append(", " + priority.toString() + "}");
+        result.append(", \"priority\":\"" + priority.toString() + "\"}");
         return result.toString();
     }
 }
